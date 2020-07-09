@@ -10,4 +10,20 @@
 #                                                                              #
 # **************************************************************************** #
 
+global _ft_strcmp
 
+_ft_strcmp:		mov			rax,0
+
+loop:
+				mov			rax,rdi
+				cmp			rax,rsi
+				je			bloop
+				jmp			end
+bloop:
+				inc			rdi
+				inc			rsi
+				jmp			loop
+end:
+				mov			rax,[rdi]
+				sub			rax,[rsi]
+				ret

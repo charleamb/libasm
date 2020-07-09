@@ -13,6 +13,7 @@
 #include <stdio.h>
 
 int	ft_strlen(char *str);
+int	ft_strcmp(char *str1, char *str2);
 
 int	main(int ac, char **av)
 {
@@ -20,4 +21,6 @@ int	main(int ac, char **av)
 
 	i = ac;
 	printf("[%s] le ret = [%d]\n", av[1], ft_strlen(av[1]));
+	printf("meee[%s] et [%s] le ret = [%d]\n", av[1], av[2], ft_strcmp(av[1], av[2]));
+	printf("true[%s] et [%s] le ret = [%d]\n", av[1], av[2], strcmp(av[1], av[2]));
 }
