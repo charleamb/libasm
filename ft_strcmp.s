@@ -6,24 +6,36 @@
 #    By: chgilber <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/07 18:46:03 by chgilber          #+#    #+#              #
-#    Updated: 2020/07/07 18:46:04 by chgilber         ###   ########.fr        #
+#    Updated: 2020/07/11 21:11:39 by chgilber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 global _ft_strcmp
 
-_ft_strcmp:		mov			rax,0
-
+_ft_strcmp:		mov			rax, 0
+				mov			rcx, 0
 loop:
-				mov			rax,rdi
-				cmp			rax,rsi
-				je			bloop
+				mov			al, [rdi]
+				mov			cl, [rsi]
+				cmp			rcx,0
+				je			verif
+				jmp			loopi
+loopi:
+				sub			rax,rcx
+				je			inc
 				jmp			end
-bloop:
+inc:
 				inc			rdi
 				inc			rsi
+				mov			al,0
+				mov			cl,0
 				jmp			loop
+verif:
+				cmp			rax,0
+				je			zero
+				jmp			loopi
+zero:
+				mov			rax,0
+				jmp			end
 end:
-				mov			rax,[rdi]
-				sub			rax,[rsi]
 				ret
