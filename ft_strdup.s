@@ -20,11 +20,11 @@ _ft_strdup:		mov		rax,0
 			;	mov		rax,rsi
 				inc		rax			; len ++ '\0'
 			;	mov		dil,[rax]
-				mov		rdi,rax
+				mov		edi,[rax]
 		;		call	_print
-		;		call	_malloc
+				call	_malloc
 			;;	mov		rdi,rax
 			;	call	_ft_strcpy
 				;mov		[rax],rdi
-				mov		rax,eax
+				mov		rax,0
 			ret
