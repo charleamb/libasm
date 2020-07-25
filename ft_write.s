@@ -6,8 +6,13 @@
 #    By: chgilber <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/07 18:46:15 by chgilber          #+#    #+#              #
-#    Updated: 2020/07/07 18:46:21 by chgilber         ###   ########.fr        #
+#    Updated: 2020/07/25 19:02:45 by chgilber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+			global _ft_write
 
+
+_ft_write:		mov		rax,0x2000004
+				syscall
+				ret

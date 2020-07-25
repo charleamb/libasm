@@ -1,31 +1,19 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ft_strcpy.s                                        :+:      :+:    :+:    #
+#    ft_read.s                                          :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: chgilber <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/07/07 18:45:35 by chgilber          #+#    #+#              #
-#    Updated: 2020/07/24 14:14:02 by chgilber         ###   ########.fr        #
+#    Created: 2020/07/07 18:46:42 by chgilber          #+#    #+#              #
+#    Updated: 2020/07/25 18:53:31 by chgilber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-global _ft_strcpy
 
-_ft_strcpy:		mov		rax,0
+			global _ft_read
 
-loop:
-				mov		dl,[rsi + rax]
-				cmp		dl,0
-				je		end
-				mov		[rdi + rax],dl
-				inc		rax
-				jmp		loop
-end:
-				mov		[rdi + rax],dl
-				mov		rax,rdi
+
+_ft_read:		mov		rax,0x2000003
+				syscall
 				ret
-
-
-
-
