@@ -231,7 +231,7 @@ void	test_ft_write(char *s)
 	write(1, s, 2144);
 	fd1 = open("./tmp1",O_RDWR);
 	fd2 = open("./tmp2",O_RDWR);
-	ft_write(fd1, s, 2144);
+//	ft_write(fd1, s, 2144);
 	write(fd2, s, 2144);
 	cmp_files("./tmp1", "./tmp2");
 	close(fd1);
@@ -239,7 +239,7 @@ void	test_ft_write(char *s)
 	printf("Testing your ft_write with an opened file:\n\n");
 	fd1 = open("./tmp3", O_RDWR);
 	fd2 = open("./tmp4", O_RDWR);
-	ft_write(fd1, "Test1", 5);
+//	ft_write(fd1, "Test1", 5);
 	printf("Your output: Error no %i - %s\n\n", errno, strerror(errno));
 	ret1 = errno;
 	write(fd2, "Test1", 5);
@@ -256,7 +256,7 @@ void	test_ft_write(char *s)
 	close(fd2);
 	fd1 = open("./tmp5", O_RDWR);
 	printf("Testing your ft_write with a wrong file descriptor:\n\n");
-	ft_write(-42, "Test2", 5);
+//	ft_write(-42, "Test2", 5);
 	printf("Your output: Error no %i - %s\n\n", errno, strerror(errno));
 	ret1 = errno;
 	write(-42, "Test2", 5);
