@@ -6,7 +6,7 @@
 /*   By: chgilber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 18:06:57 by chgilber          #+#    #+#             */
-/*   Updated: 2020/07/25 19:18:45 by chgilber         ###   ########.fr       */
+/*   Updated: 2020/07/27 17:51:00 by chgilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	main(int ac, char **av)
 {
 	int fdr;
 	int fdw;
-	char buf[2049];
+	char buf[15];
+	char buf2[15];
 
 	fdr = ac;
 	fdr = open("test.txt",O_RDONLY);
@@ -42,6 +43,7 @@ int	main(int ac, char **av)
 	printf("\n^--ftwrite[%d][%s][%d] le ret = [%lu]\n", fdw, av[3], atoi(av[5]), ft_write(fdw, av[3], atoi(av[5])));
 	printf("  ftread[%d][%s][%d] le ret = [%lu]\n", fdr, av[3], atoi(av[5]), ft_read(fdr, av[3], atoi(av[5])));
 */
-	printf("read    = %lu, buf = %s\n", read(19, NULL, -1), buf);
-	printf("ft_read = %lu, buf = %s\n", ft_read(19, NULL, -1), buf);
+	printf("ft_read = %lu, buf = %s\n", ft_read(0, &buf2, 15), buf2);
+	printf("read    = %lu, buf = %s\n", read(0, &buf, 15), buf);
+
 	}
