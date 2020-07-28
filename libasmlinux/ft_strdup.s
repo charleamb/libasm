@@ -6,7 +6,7 @@
 #    By: chgilber <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/07 18:46:57 by chgilber          #+#    #+#              #
-#    Updated: 2020/07/28 18:13:09 by chgilber         ###   ########.fr        #
+#    Updated: 2020/07/28 18:27:53 by chgilber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 		extern	ft_strcpy
 		extern	_malloc
 
-_ft_strdup:		call	ft_strlen ; rax = len
+ft_strdup:		call	ft_strlen ; rax = len
 				inc		rax			; len ++ '\0'
 				push	rdi          ; stock de str
 				mov		rdi,rax		;1er arg = len a malloc
