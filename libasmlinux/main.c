@@ -6,7 +6,7 @@
 /*   By: chgilber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 18:06:57 by chgilber          #+#    #+#             */
-/*   Updated: 2020/07/28 15:37:24 by chgilber         ###   ########.fr       */
+/*   Updated: 2020/07/28 18:16:09 by chgilber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int ac, char **av)
 	fdr = open("test.txt",O_RDONLY);
 	fdw = open("test.txt",O_WRONLY);
 	
-/*	printf("ft_strlen[%s] le ret = [%lu]\n", av[1], ft_strlen(av[1]));
+	printf("ft_strlen[%s] le ret = [%lu]\n", av[1], ft_strlen(av[1]));
 	printf("   strlen[%s] le ret = [%lu]\n", av[1], strlen(av[1]));
 	printf("ft_strcmp[%s] et [%s] le ret = [%d]\n", av[1], av[2], ft_strcmp(av[1], av[2]));
 	printf("   strcmp[%s] et [%s] le ret = [%d]\n", av[1], av[2], strcmp(av[1], av[2]));
@@ -42,8 +42,4 @@ int	main(int ac, char **av)
 	printf("  read[%d][%s][%d] le ret = [%lu]\n", fdr, av[3], atoi(av[5]), read(fdr, av[3], atoi(av[5])));
 	printf("\n^--ftwrite[%d][%s][%d] le ret = [%lu]\n", fdw, av[3], atoi(av[5]), ft_write(fdw, av[3], atoi(av[5])));
 	printf("  ftread[%d][%s][%d] le ret = [%lu]\n", fdr, av[3], atoi(av[5]), ft_read(fdr, av[3], atoi(av[5])));
-*/
-	printf("ft_read = %lu, buf = %s\n", ft_read(0, &buf2, 15), buf2);
-	printf("read    = %lu, buf = %s\n", read(0, &buf, 15), buf);
-
 	}
