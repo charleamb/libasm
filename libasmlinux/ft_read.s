@@ -6,7 +6,7 @@
 #    By: chgilber <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/07 18:46:42 by chgilber          #+#    #+#              #
-#    Updated: 2020/07/28 18:11:56 by chgilber         ###   ########.fr        #
+#    Updated: 2020/07/29 18:37:45 by chgilber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,15 +17,18 @@
 ft_read:
 			mov		rax, 0
 			syscall
-			jc		exit_error
-		;;	mov		rdi,rsi
-		;	call _ft_strlen
-		;	pop		rdi
+			cmp		rax,0
+			jl		exit_error
+			mov		rdx,0
+			mov		[rsi + rax],rdx
 			ret
 
 exit_error:
-			push rax
+			neg		rax
+			mov		rcx,rax
+			push	rcx
 			call __errno_location
-			pop QWORD [rax]
-			mov rax, -1
+			pop		rcx
+			mov		[rax],rcx
+			mov		rax, -1
 			ret
